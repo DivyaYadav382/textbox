@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin:0px;
+			box-sizing: border-box;
+		}
+		.heading{
+			font-size: 50px;
+			color: royalblue;
+
+		}
+		label{
+			font-size: 25px;
+			font-weight: bolder;
+		}
+		.form-container{
+			margin-top: 50px;
+		}
+		textarea{
+			margin-top: 20px;
+			font-size: 20px;
+			font-family: sans-serif;
+			padding: 15px;
+		}
+		button{
+			border: none;
+			height: 50px;
+			width: 120px;
+			background-color:royalblue ;
+			color: white;
+			border-radius: 13px;
+		}
+		button:hover{
+			cursor: pointer;
+		}
+	</style>
+	
+	<title>TEXT EDITOR</title>
+</head>
+<body>
+	<div class="texteditor" align="center">
+		<h1 class="heading">TEXT BOX</h1>
+		<div class="form-container">
+		 <form class="textform">
+		 	<label>Enter some text below</label><br>
+		 	<textarea rows="15" cols="80" autofocus id="usertext"></textarea>
+             <br><br>
+             <button type="button" onclick="transformToUpperCase()">UPPERCASE</button>
+             <button type="button" onclick="transformToLowerCase()">LOWERCASE</button>
+             <button type="button" onclick="searchText()">SearchText</button>
+             <button type="button" onclick="changeTextColor()">Change Color</button>
+             <br><br>
+             <h2 id="op">This text contains 2 words and 15 characters</h2>
+
+
+         </form>
+     </div>
+ </div>
+ <script type="text/javascript">
+
+ 	function updateTextInfo() {
+       let text=document.getElementById("usertext").value;
+       let words=text.split(" ").length-1;
+       document.getElementById("op").innerHTML="This text contains"+words+" words and"+text.length+" characters"
+ 		
+ 	}
+ 	function transformToUpperCase(){
+ 		let text= document.getElementById("usertext");
+ 		text.value=(text.value).toUpperCase();
+ 	}
+
+ 	function transformToLowerCase(){
+ 		let text=document.getElementById("usertext");
+ 		text.value=(text.value).toLowerCase();
+ 	}
+
+ 	function searchText(){
+ 		let text=document.getElementById("usertext").value;
+ 		let searchText=prompt("Enter a text to search :");
+ 		if(text.includes(searchText))
+ 		{
+ 			alert("Yess the text"+searchText+"is present")
+ 		}else{
+ 		 	alert("Noo the text"+searchText+"is not present")
+	
+ 		}
+ 	}
+ 	function changeTextColor(){
+ 		let text=document.getElementById("usertext");
+ 		text.style.color=prompt("Enter a color:");
+ 	}
+ </script>
+
+</body>
+
+</html>
