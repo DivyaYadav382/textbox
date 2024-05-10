@@ -48,7 +48,7 @@
 		<div class="form-container">
 		 <form class="textform">
 		 	<label>Enter some text below</label><br>
-		 	<textarea rows="15" cols="80" autofocus id="usertext"></textarea>
+		 	<textarea rows="15" cols="80" autofocus id="usertext" onkeypress="updateTextInfo()"></textarea>
              <br><br>
              <button type="button" onclick="transformToUpperCase()">UPPERCASE</button>
              <button type="button" onclick="transformToLowerCase()">LOWERCASE</button>
@@ -84,9 +84,9 @@
  		let searchText=prompt("Enter a text to search :");
  		if(text.includes(searchText))
  		{
- 			alert("Yess the text"+searchText+"is present")
+ 			alert("Yess the text "  +searchText+" is present")
  		}else{
- 		 	alert("Noo the text"+searchText+"is not present")
+ 		 	alert("Noo the text "  +searchText+" is not present")
 	
  		}
  	}
